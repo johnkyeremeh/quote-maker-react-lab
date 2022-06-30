@@ -2,13 +2,13 @@
 
 export const addQuote = (quote) =>  {
     return {
-        type: "ADD_QUOTE", quote: quote
+        type: "ADD_QUOTE", quote: Object.assign({}, quote, {votes: 0})
     }
 }
 
-export const removeQuote = (quote) =>  {
+export const removeQuote = (id) =>  {
     return {
-        type: "REMOVE_QUOTE", quoteId: quote
+        type: "REMOVE_QUOTE", quoteId: id
     }
 }
 
