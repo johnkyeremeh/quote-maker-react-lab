@@ -15,11 +15,13 @@ class Quotes extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
+              
               {/*
                 TODO:
 
                 Render Quotes With QuoteCard component and pass down callback props for removing, upvoting and downvoting quotes
                */}
+               
             </div>
           </div>
         </div>
@@ -28,5 +30,15 @@ class Quotes extends Component {
   }
 }
 
+
+const mapStateToProps = (state) => {
+  console.log("Current content and author:", state)
+
+  return {
+    content: state.content,
+    author: state.author
+  }
+}
+
 //add arguments to connect as needed
-export default connect()(Quotes);
+export default connect(mapStateToProps)(Quotes);
